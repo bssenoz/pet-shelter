@@ -1,6 +1,31 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Animal Create";
 }
-<h1>create</h1>
+@model AnimalShelter.Models.Animal
+
+
+<div class="container">
+    <h1>New Animal</h1>
+    <form asp-action="Create">
+
+        <label>Familya</label>
+        <input asp-for="Familya" class="form-control" type="text" placeholder="" aria-label="">
+        <span asp-validation-for="Familya" class="text-danger"></span>
+        <label>Species</label>
+        <input asp-for="Species" class="form-control" type="text" placeholder="" aria-label="">
+        <span asp-validation-for="Species" class="text-danger"></span>
+        <label>Age</label>
+        <input asp-for="Age" class="form-control" type="number" placeholder="" aria-label="">
+        <span asp-validation-for="Age" class="text-danger"></span>
+        <label>Image Link</label>
+        <input asp-for="Image" class="form-control" type="text" placeholder="" aria-label="">
+        <span asp-validation-for="Image" class="text-danger"></span>
+        <input type="submit" value="Create" class="btn btn-primary" style="margin-top:1rem" />
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

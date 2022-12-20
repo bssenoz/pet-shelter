@@ -1,17 +1,31 @@
 ﻿@{
-    ViewData["Title"] = "Animal Create";
+    ViewData["Title"] = "Animal";
 }
+@model IEnumerable<AnimalShelter.Models.Animal>
 
-<h1>index</h1>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<div class="card" style="width: 18rem;">
-    <img src="https://kopekblog.com/wp-content/uploads/2020/12/1331887.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Golden Retriever</h5>
-        <h6>Age: 4</h6>
-        <button type="button" class="btn btn-secondary" disabled>Dog</button>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+
+<div class="container" style="text-align:center">
+    <h1>ANIMALS</h1>
+     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        @foreach (var item in Model)
+        {
+                <div class="col" style="margin-top:1rem">
+                    <div class="card" style="width: 18rem;height: 27rem;">
+                        <img src="@Html.DisplayFor(modelItem => item.Image)" />
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Species)</h5>
+                            <h6>Age: @Html.DisplayFor(modelItem => item.Age)</h6>
+                            <button type="button" class="btn btn-secondary" disabled>@Html.DisplayFor(modelItem => item.Familya)</button>
+                        </div>
+                    </div>
+                </div>
+        }
+      </div>
+    
 </div>
+  
+  
+
+
+
+
