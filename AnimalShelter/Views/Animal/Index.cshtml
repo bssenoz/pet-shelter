@@ -16,6 +16,8 @@
                             <h5 class="card-title">@Html.DisplayFor(modelItem => item.Species)</h5>
                             <h6>Age: @Html.DisplayFor(modelItem => item.Age)</h6>
                             <button type="button" class="btn btn-secondary" disabled>@Html.DisplayFor(modelItem => item.Familya)</button>
+                            <a asp-action="Edit" asp-route-id="@item.AnimalId">Düzenle</a> |
+                            <a asp-action="Delete" asp-route-id="@item.AnimalId">Sil</a>
                         </div>
                     </div>
                 </div>
