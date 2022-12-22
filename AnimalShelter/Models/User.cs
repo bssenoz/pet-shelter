@@ -6,16 +6,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AnimalShelter.Models
 {
-    public class Animal
+    public class User
     {
         [Key]
-        public int AnimalId { get; set; }
+        public int UserId { get; set; }
+        [StringLength(50)]
         [Required]
-        public string Familya { get; set; }
+        public string Username { get; set; }
+        [StringLength(50)]
         [Required]
-        public string Species { get; set; }
-        public string Image { get; set; }
+        public string Password { get; set; }
         [Required]
-        public int Age { get; set; }
+        public string Role { get; set; }
     }
 }
