@@ -7,10 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AnimalShelter.Models
 {
-    public class ShelterContext:DbContext
+    public class ShelterContext : DbContext
     {
         public DbSet<Animal> Animals { get; set; }
-        public DbSet<User> Users { get; set; }
         public object Configuration { get; internal set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

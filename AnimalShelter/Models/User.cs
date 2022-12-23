@@ -1,22 +1,16 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
 
 namespace AnimalShelter.Models
 {
-    public class User
+    public class User: IdentityUser
     {
-        [Key]
-        public int UserId { get; set; }
-        [StringLength(50)]
-        [Required]
-        public string Username { get; set; }
-        [StringLength(50)]
-        [Required]
-        public string Password { get; set; }
-        [Required]
-        public string Role { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+
     }
 }
