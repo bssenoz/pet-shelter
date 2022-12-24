@@ -12,16 +12,10 @@ namespace AnimalShelter.Areas.Identity.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-        {
-        }
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
-
-        //public object Animals { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -10,11 +10,12 @@ namespace AnimalShelter.Models
     public class ShelterContext : DbContext
     {
         public DbSet<Animal> Animals { get; set; }
+        public DbSet<Adoption> Adoption { get; set; }
         public object Configuration { get; internal set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-QUPCTV5; Database=AnimalShelter;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-QUPCTV5; Database=Shelter;Trusted_Connection=True;");
         }
     }
 }

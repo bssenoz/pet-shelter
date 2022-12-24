@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bseno\\source\\repos\\AnimalShelter\\AnimalShelter\\AnimalShelter.csproj": {}
+    "C:\\Users\\bseno\\OneDrive\\Masaüstü\\yeni2\\AnimalShelter\\AnimalShelter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bseno\\source\\repos\\AnimalShelter\\AnimalShelter\\AnimalShelter.csproj": {
+    "C:\\Users\\bseno\\OneDrive\\Masaüstü\\yeni2\\AnimalShelter\\AnimalShelter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bseno\\source\\repos\\AnimalShelter\\AnimalShelter\\AnimalShelter.csproj",
+        "projectUniqueName": "C:\\Users\\bseno\\OneDrive\\Masaüstü\\yeni2\\AnimalShelter\\AnimalShelter.csproj",
         "projectName": "AnimalShelter",
-        "projectPath": "C:\\Users\\bseno\\source\\repos\\AnimalShelter\\AnimalShelter\\AnimalShelter.csproj",
+        "projectPath": "C:\\Users\\bseno\\OneDrive\\Masaüstü\\yeni2\\AnimalShelter\\AnimalShelter.csproj",
         "packagesPath": "C:\\Users\\bseno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bseno\\source\\repos\\AnimalShelter\\AnimalShelter\\obj\\",
+        "outputPath": "C:\\Users\\bseno\\OneDrive\\Masaüstü\\yeni2\\AnimalShelter\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

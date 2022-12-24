@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Animal Create";
+}
+@model AnimalShelter.Models.Adoption
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*<div class="container">
+        <h1>New Animal</h1>
+        <form asp-action="AdoptionCr">
+            <label>UserId</label>
+            <input asp-for="UserId" class="form-control" type="text" placeholder="" aria-label="">
+            <span asp-validation-for="UserId" class="text-danger"></span>
+            <label>AnimalId</label>
+            <input asp-for="AnimalId" class="form-control" type="text" placeholder="" aria-label="">
+            <span asp-validation-for="AnimalId" class="text-danger"></span>
+
+            <input type="submit" value="Create" class="btn btn-primary" style="margin-top:1rem" />
+        </form>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
