@@ -1,0 +1,21 @@
+﻿@model AnimalShelter.Models.Adoption
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h1>New Adoption</h1>
+    <form asp-action="New">
+        <label>AnimalId</label>
+        <input asp-for="AnimalId" class="form-control">
+        <span asp-validation-for="AnimalId" class="text-danger"></span>
+        <label>Username</label>
+        <input asp-for="Username" class="form-control">
+        <span asp-validation-for="Username" class="text-danger"></span>
+        <input type="submit" value="Approve" class="btn btn-primary" style="margin-top:1rem" />
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

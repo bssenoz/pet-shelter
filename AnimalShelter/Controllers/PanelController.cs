@@ -17,11 +17,54 @@ namespace AnimalShelter.Controllers
             var animals = k.Animals;
             return View(animals);
         }
+        public IActionResult Approve( int? id)
+        {
+            var a = k.Adoption.FirstOrDefault(x => x.Id == id);
+            a.Situation = true;
+            k.Adoption.Update(a);
+            k.SaveChanges();
+            Delete(a.AnimalId);
+            return View(a);
+        }
+        public IActionResult Reject(int? id)
+        {
+            var a = k.Adoption.FirstOrDefault(x => x.Id == id);
+            k.Adoption.Remove(a);
+            k.SaveChanges();
+            return View(a);
+        }
+
+        public IActionResult New()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult New(Adoption a)
+        {
+            if (ModelState.IsValid)
+            {
+                a.Situation = true;
+                k.Add(a);
+                k.SaveChanges();
+                Delete(a.AnimalId);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                TempData["hata"] = "Lütfen Gerekli alanları doldurunuz";
+                return RedirectToAction("Create");
+            }
+
+        }
+
+
         public IActionResult Adoption()
         {
             var adoptions = k.Adoption;
             return View(adoptions);
         }
+
 
         [HttpPost]
         public IActionResult Edit(int? id, Animal a)
@@ -37,7 +80,6 @@ namespace AnimalShelter.Controllers
                 k.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //TempData["hata"] = "Lütfen verileri eksiksiz girin";
             return View();
         }
         public IActionResult Edit(int? id)
@@ -102,8 +144,6 @@ namespace AnimalShelter.Controllers
             }
 
         }
-
-        //[Authorize(Roles = "Admin")]
 
 
     }

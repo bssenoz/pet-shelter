@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnimalShelter.Models
 {
-    public class Adoption:ApplicationUserEntityConfiguration
+    public class Adoption
 
     {
         [Key]

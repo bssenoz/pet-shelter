@@ -334,4 +334,6 @@ C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Vi
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\Adoption.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Animal\Adoption.cshtml.g.cs
-C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\AdoptionEdit.cshtml.g.cs
+C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\Approve.cshtml.g.cs
+C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\Reject.cshtml.g.cs
+C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\New.cshtml.g.cs
