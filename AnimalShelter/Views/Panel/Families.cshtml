@@ -13,38 +13,29 @@
 @{
     ViewData["Title"] = "Animal";
 }
-@model IEnumerable<AnimalShelter.Models.Pet>
+@model IEnumerable<AnimalShelter.Models.Familya>
 @inject LanguageService language
 
 
 <div class="container" style="text-align:center">
     <h1>ANIMALS</h1>
     <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Create"> @language.GetKey("newAnimal")</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="FamilyaCreate"> @language.GetKey("newAnimal")</a>
     </button>
     <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
         <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Adoption"> @language.GetKey("adoptionRequests")</a>
     </button>
     <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="CreateFamilya"> @language.GetKey("familya") new</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Familya"> @language.GetKey("familya") new</a>
     </button>
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    @language.GetKey("PetId")
+                    Id
                 </th>
                 <th>
-                    @language.GetKey("image")
-                </th>
-                <th>
-                    @language.GetKey("familya")
-                </th>
-                <th>
-                    @language.GetKey("species")
-                </th>
-                <th>
-                    @language.GetKey("age")
+                    @language.GetKey("name")
                 </th>
                 <th></th>
             </tr>
@@ -54,23 +45,13 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.PetId)
+                        @Html.DisplayFor(modelItem => item.Id)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Image)
+                        @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.FamilyaId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Species)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Age)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.PetId">@language.GetKey("edit")</a>
-                        <a asp-action="Delete" asp-route-id="@item.PetId">Delete</a>
+                        <a asp-action="FamilyaDelete" asp-route-id="@item.Id">@language.GetKey("delete")</a>
                     </td>
                 </tr>
             }

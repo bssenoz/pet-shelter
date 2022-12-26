@@ -123,7 +123,7 @@
   <data name="age" xml:space="preserve">
     <value>Yaş</value>
   </data>
-  <data name="animalId" xml:space="preserve">
+  <data name="PetId" xml:space="preserve">
     <value>Hayvan Id</value>
   </data>
   <data name="approve" xml:space="preserve">
@@ -141,14 +141,26 @@
   <data name="familya" xml:space="preserve">
     <value>Aile</value>
   </data>
+  <data name="hello" xml:space="preserve">
+    <value>Merhaba</value>
+  </data>
   <data name="image" xml:space="preserve">
     <value>Resim</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>Çıkış</value>
   </data>
   <data name="newAdoption" xml:space="preserve">
     <value>Yeni Sahiplenme</value>
   </data>
   <data name="newAnimal" xml:space="preserve">
     <value>Yeni Hayvan</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Kayıt Ol</value>
   </data>
   <data name="reject" xml:space="preserve">
     <value>Reddet</value>
@@ -172,6 +184,9 @@
     <value>Sahiplenmek İste</value>
   </data>
   <data name="welcome" xml:space="preserve">
-    <value>hoşgeldin</value>
+    <value>Hoşgeldin</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Ad</value>
   </data>
 </root>

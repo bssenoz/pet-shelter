@@ -123,7 +123,7 @@
   <data name="age" xml:space="preserve">
     <value>Age</value>
   </data>
-  <data name="animalId" xml:space="preserve">
+  <data name="PetId" xml:space="preserve">
     <value>Animal Id</value>
   </data>
   <data name="approve" xml:space="preserve">
@@ -141,14 +141,26 @@
   <data name="familya" xml:space="preserve">
     <value>Familya</value>
   </data>
+  <data name="hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
   <data name="image" xml:space="preserve">
     <value>Image</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>Logout</value>
   </data>
   <data name="newAdoption" xml:space="preserve">
     <value>New Adoption</value>
   </data>
   <data name="newAnimal" xml:space="preserve">
     <value>New Animal</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Register</value>
   </data>
   <data name="reject" xml:space="preserve">
     <value>Reject</value>
@@ -173,5 +185,8 @@
   </data>
   <data name="welcome" xml:space="preserve">
     <value>Welcome</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
   </data>
 </root>

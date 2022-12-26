@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Animal Create";
+}
+@model AnimalShelter.Models.Familya
+@inject LanguageService language
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container">
+    <form asp-action="CreateFamilya">
+  
+        <label>name</label>
+        <input asp-for="Name" class="form-control" type="text" placeholder="" aria-label="">
+        <span asp-validation-for="Name" class="text-danger"></span>
+        
+        <input type="submit" value="@language.GetKey("create")" class="btn btn-primary" style="margin-top:1rem" />
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

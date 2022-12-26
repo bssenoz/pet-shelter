@@ -9,8 +9,9 @@ namespace AnimalShelter.Models
 {
     public class ShelterContext : DbContext
     {
-        public DbSet<Animal> Animals { get; set; }
+        public DbSet<Pet> Pets { get; set; }
         public DbSet<Adoption> Adoption { get; set; }
+        public DbSet<Familya> Families { get; set; }
         public object Configuration { get; internal set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

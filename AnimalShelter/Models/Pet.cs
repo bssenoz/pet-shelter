@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
 
 namespace AnimalShelter.Models
 {
-    public class Animal
+    public class Pet
     {
         [Key]
-        public int AnimalId { get; set; }
+        public int PetId { get; set; }
         [Required]
-        public string Familya { get; set; }
+        public int FamilyaId { get; set; }
         [Required]
         public string Species { get; set; }
         public string Image { get; set; }

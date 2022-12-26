@@ -1,4 +1,4 @@
-﻿@model AnimalShelter.Models.Animal
+﻿@model AnimalShelter.Models.Pet
 @{
         Layout = "/Views/Shared/_AdminLayout.cshtml";
     }
@@ -7,10 +7,10 @@
     <h1>New Animal</h1>
     <form asp-action="Edit">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input type="hidden" asp-for="AnimalId" />
+        <input type="hidden" asp-for="PetId" />
         <label>@language.GetKey("familya")</label>
-        <input asp-for="Familya" class="form-control">
-        <span asp-validation-for="Familya" class="text-danger"></span>
+        <input asp-for="FamilyaId" class="form-control">
+        <span asp-validation-for="FamilyaId" class="text-danger"></span>
         <label>@language.GetKey("species")</label>
         <input asp-for="Species" class="form-control">
         <span asp-validation-for="Species" class="text-danger"></span>

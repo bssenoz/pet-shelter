@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace AnimalShelter.Models
 {
-    public class Family
+    public class Familya
     {
         [Key]
-        public int FamilyId { get; set; }
+        public int Id { get; set; }
         [Required]
-        public string FamilyaName { get; set; }
+        public string Name { get; set; }
 
     }
 }

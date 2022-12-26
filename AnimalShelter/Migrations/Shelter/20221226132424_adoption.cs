@@ -13,7 +13,7 @@ namespace AnimalShelter.Migrations.Shelter
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AnimalId = table.Column<int>(type: "int", nullable: false),
+                    PetId = table.Column<int>(type: "int", nullable: false),
                     Situation = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>

@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Animal Create";
 }
-@model AnimalShelter.Models.Animal
+@model AnimalShelter.Models.Pet
 @inject LanguageService language
 @{
     Layout = "/Views/Shared/_AdminLayout.cshtml";
@@ -10,8 +10,8 @@
     <h1>New Animal</h1>
     <form asp-action="Create">
         <label>@language.GetKey("familya")</label>
-        <input asp-for="Familya" class="form-control" type="text" placeholder="" aria-label="">
-        <span asp-validation-for="Familya" class="text-danger"></span>
+        <input asp-for="FamilyaId" class="form-control" type="text" placeholder="" aria-label="">
+        <span asp-validation-for="FamilyaId" class="text-danger"></span>
         <label>@language.GetKey("species")</label>
         <input asp-for="Species" class="form-control" type="text" placeholder="" aria-label="">
         <span asp-validation-for="Species" class="text-danger"></span>

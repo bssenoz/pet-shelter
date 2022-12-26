@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AnimalShelter.Migrations.Shelter
 {
     [DbContext(typeof(ShelterContext))]
-    [Migration("20221222164828_animal")]
-    partial class animal
+    [Migration("20221226104143_pet")]
+    partial class pet
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,9 +20,30 @@ namespace AnimalShelter.Migrations.Shelter
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AnimalShelter.Models.Animal", b =>
+            modelBuilder.Entity("AnimalShelter.Models.Adoption", b =>
                 {
-                    b.Property<int>("AnimalId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("PetId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Situation")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Adoption");
+                });
+
+            modelBuilder.Entity("AnimalShelter.Models.Pet", b =>
+                {
+                    b.Property<int>("PetId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -30,9 +51,8 @@ namespace AnimalShelter.Migrations.Shelter
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<string>("Familya")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("FamilyaId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -41,9 +61,9 @@ namespace AnimalShelter.Migrations.Shelter
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AnimalId");
+                    b.HasKey("PetId");
 
-                    b.ToTable("Animals");
+                    b.ToTable("Pets");
                 });
 #pragma warning restore 612, 618
         }

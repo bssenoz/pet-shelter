@@ -92,7 +92,7 @@ namespace AnimalShelter
                 endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Animal}/{action=Index}/{id?}");
+                    pattern: "{controller=Pet}/{action=Index}/{id?}");
             });
         }
 

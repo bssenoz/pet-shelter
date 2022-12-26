@@ -7,16 +7,45 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 
 namespace AnimalShelter.Controllers
 {
-    public class AnimalController : Controller
+    public class PetController : Controller
     {
         ShelterContext k = new ShelterContext();
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string SearchString)
         {
-            var animals = k.Animals;
-            return View(animals);
+            ViewData["CurrentFilter"] = SearchString;
+            var pets = from p in k.Pets select p;
+            if(!String.IsNullOrEmpty(SearchString))
+            {
+                pets = pets.Where(p => p.Species.Contains(SearchString));
+            } 
+            var petList = pets.ToList().OrderByDescending(r => r.PetId);
+            return View(petList);
+        }
+ 
+        public IActionResult Dog()
+        {
+            var pet=(from a in k.Pets
+                      where a.FamilyaId == 1
+             select a).ToList().OrderByDescending(r => r.PetId);
+            return View(pet);
+        }
+        public IActionResult Cat()
+        {
+            var pet = (from a in k.Pets
+                        where a.FamilyaId == 3
+                        select a).ToList().OrderByDescending(r => r.PetId);
+            return View(pet);
+        }
+        public IActionResult Bird()
+        {
+            var pet = (from a in k.Pets
+                        where a.FamilyaId == 4
+                        select a).ToList().OrderByDescending(r => r.PetId);
+            return View(pet);
         }
         [Authorize]
         public IActionResult Adoption(int? id)
@@ -26,7 +55,7 @@ namespace AnimalShelter.Controllers
                 TempData["hata"] = "Düzenleme kısmı çalışamaz";
                 return View("Hata");
             }
-            var a = k.Animals.FirstOrDefault(x => x.AnimalId == id);
+            var a = k.Pets.FirstOrDefault(x => x.PetId == id);
             if (a is null)
             {
                 TempData["hata"] = "Düzenlenece herhangi bir yazar yok";
@@ -35,7 +64,7 @@ namespace AnimalShelter.Controllers
             }
             Adoption b = new Adoption();
             b.Username = User.Identity.Name;
-            b.AnimalId = a.AnimalId;
+            b.PetId = a.PetId;
             b.Situation = false;
             k.Add(b);
             k.SaveChanges();
