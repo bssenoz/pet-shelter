@@ -333,7 +333,13 @@ C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Vi
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Admin\Create.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\Adoption.cshtml.g.cs
-C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Animal\Adoption.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\Approve.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\Reject.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\New.cshtml.g.cs
+C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\bin\Debug\net5.0\tr\AnimalShelter.resources.dll
+C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\AnimalShelter.Resources.Resource.tr.resources
+C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\AnimalShelter.csproj.GenerateResource.cache
+C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\tr\AnimalShelter.resources.dll
+C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\bin\Debug\net5.0\en-US\AnimalShelter.resources.dll
+C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\AnimalShelter.Resources.Resource.en-US.resources
+C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\en-US\AnimalShelter.resources.dll

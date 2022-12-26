@@ -1,18 +1,18 @@
 ﻿@model AnimalShelter.Models.Adoption
+@inject LanguageService language
 @{
     Layout = "/Views/Shared/_AdminLayout.cshtml";
 }
-
 <div class="container">
     <h1>New Adoption</h1>
     <form asp-action="New">
-        <label>AnimalId</label>
+        <label> @language.GetKey("animalId")</label>
         <input asp-for="AnimalId" class="form-control">
         <span asp-validation-for="AnimalId" class="text-danger"></span>
-        <label>Username</label>
+        <label> @language.GetKey("user")</label>
         <input asp-for="Username" class="form-control">
         <span asp-validation-for="Username" class="text-danger"></span>
-        <input type="submit" value="Approve" class="btn btn-primary" style="margin-top:1rem" />
+        <input type="submit" value="@language.GetKey("approve")" class="btn btn-primary" style="margin-top:1rem" />
     </form>
 </div>
 

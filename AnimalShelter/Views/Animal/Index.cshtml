@@ -2,26 +2,27 @@
     ViewData["Title"] = "Animal";
 }
 @model IEnumerable<AnimalShelter.Models.Animal>
+@inject LanguageService language
+
 
 <div class="container" style="text-align:center">
-    <h1>PANELS</h1>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-        <form asp-action="Adoption">
             @foreach (var item in Model)
             {
+        <form asp-action="Adoption">
                 <div class="col" style="margin-top:1rem">
                     <div class="card" style="width: 18rem;height: 27rem;">
                         <img src="@Html.DisplayFor(modelItem => item.Image)" />
                         <div class="card-body">
                             <h5 class="card-title">@Html.DisplayFor(modelItem => item.Species)</h5>
-                            <h6>Age: @Html.DisplayFor(modelItem => item.Age)</h6>
+                            <h6>@language.GetKey("age"): @Html.DisplayFor(modelItem => item.Age)</h6>
                             <button type="button" class="btn btn-secondary" disabled>@Html.DisplayFor(modelItem => item.Familya)</button>
-                            <a asp-action="Adoption" asp-route-id="@item.AnimalId">Sahiplenmek iste</a>
+                            <a asp-action="Adoption" asp-route-id="@item.AnimalId">@language.GetKey("want")</a>
                         </div>
                     </div>
                 </div>
+        </form>
             }
-            </form>
     </div>
 
 </div>

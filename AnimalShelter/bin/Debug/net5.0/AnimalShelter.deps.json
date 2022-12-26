@@ -318,6 +318,14 @@
         "runtime": {
           "AnimalShelter.dll": {}
         },
+        "resources": {
+          "en-US/AnimalShelter.resources.dll": {
+            "locale": "en-US"
+          },
+          "tr/AnimalShelter.resources.dll": {
+            "locale": "tr"
+          }
+        },
         "compile": {
           "AnimalShelter.dll": {}
         }

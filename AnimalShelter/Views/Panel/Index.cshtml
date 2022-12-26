@@ -1,38 +1,47 @@
 ﻿
-@{
-    ViewData["Title"] = "Animal";
-}
-@model IEnumerable<AnimalShelter.Models.Animal>
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using Microsoft.AspNetCore.Mvc.Localization
 
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
 @{
     Layout = "/Views/Shared/_AdminLayout.cshtml";
 }
 
+@{
+    ViewData["Title"] = "Animal";
+}
+@model IEnumerable<AnimalShelter.Models.Animal>
+@inject LanguageService language
+
+
 <div class="container" style="text-align:center">
     <h1>ANIMALS</h1>
     <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Create">New Animal</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Create"> @language.GetKey("newAnimal")</a>
     </button>
     <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Adoption">İstekler</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Adoption"> @language.GetKey("adoptionRequests")</a>
     </button>
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.AnimalId)
+                    @language.GetKey("animalId")
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Image)
+                    @language.GetKey("image")
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Familya)
+                    @language.GetKey("familya")
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Species)
+                    @language.GetKey("species")
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Age)
+                    @language.GetKey("age")
                 </th>
                 <th></th>
             </tr>
@@ -40,30 +49,28 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AnimalId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Image)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Familya)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Species)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Age)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.AnimalId">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item.AnimalId">Delete</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Image)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Familya)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Species)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.AnimalId">@language.GetKey("edit")</a>
+                        <a asp-action="Delete" asp-route-id="@item.AnimalId">Delete</a>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
 </div>
-
-

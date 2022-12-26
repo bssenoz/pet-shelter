@@ -18,6 +18,7 @@ namespace AnimalShelter.Controllers
             var animals = k.Animals;
             return View(animals);
         }
+        [Authorize]
         public IActionResult Adoption(int? id)
         {
             if (id is null)
@@ -41,6 +42,7 @@ namespace AnimalShelter.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]
+        
         public IActionResult Adoption(Adoption a)
         {
             a.Username = User.Identity.Name;

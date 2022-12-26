@@ -3,30 +3,31 @@
     ViewData["Title"] = "Animal";
 }
 @model IEnumerable<AnimalShelter.Models.Adoption>
-
 @{
     Layout = "/Views/Shared/_AdminLayout.cshtml";
 }
 
+@inject LanguageService language
+
 <div class="container" style="text-align:center">
-    <h1>Sahiplenme İstekler</h1>    <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="New">New Adoption</a>
+    <button type="button" class="btn btn-outline-success">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="New">@language.GetKey("newAdoption")</a>
     </button>
-    <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Create">New Animal</a>
+    <button type="button" class="btn btn-outline-success">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Create">@language.GetKey("newAnimal")</a>
     </button>
 
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.AnimalId)
+                    @language.GetKey("animalId")
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Username)
+                    @language.GetKey("user")
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Situation)
+                    @language.GetKey("situation")
                 </th>
                 <th></th>
             </tr>
@@ -45,13 +46,27 @@
                         @Html.DisplayFor(modelItem => item.Situation)
                     </td>
                     <td>
-                        <a asp-controller="Panel" asp-action="Approve" asp-route-id="@item.Id">Approve</a>
+                        <a asp-controller="Panel" asp-action="Approve" asp-route-id="@item.Id">@language.GetKey("approve")</a>
                     </td>
                     <td>
-                        <a asp-controller="Panel" asp-action="Reject" asp-route-id="@item.Id">Reject</a>
+                        <a asp-controller="Panel" asp-action="Reject" asp-route-id="@item.Id" onclick="reject()">@language.GetKey("reject")</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+
+<style>
+    .btn-outline-success {
+        float: right;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+    }
+</style>
+<script>
+    function reject() {
+        alert("reddedildi");
+    }
+</script>
+
