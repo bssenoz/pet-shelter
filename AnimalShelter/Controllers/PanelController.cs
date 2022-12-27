@@ -11,12 +11,13 @@ namespace AnimalShelter.Controllers
     {
         ShelterContext k = new ShelterContext();
 
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             var animals = k.Pets;
             return View(animals);
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult Approve( int? id)
         {
             var a = k.Adoption.FirstOrDefault(x => x.Id == id);
@@ -26,6 +27,7 @@ namespace AnimalShelter.Controllers
             Delete(a.PetId);
             return View(a);
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult Reject(int? id)
         {
             var a = k.Adoption.FirstOrDefault(x => x.Id == id);
@@ -33,6 +35,7 @@ namespace AnimalShelter.Controllers
             k.SaveChanges();
             return View(a);
         }
+        [Authorize(Roles = "Admin")]
 
         public IActionResult New()
         {
@@ -58,13 +61,13 @@ namespace AnimalShelter.Controllers
 
         }
 
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Adoption()
         {
             var adoptions = k.Adoption;
             return View(adoptions);
         }
-
+        [Authorize(Roles = "Admin")]
 
         [HttpPost]
         public IActionResult Edit(int? id, Pet a)
@@ -82,6 +85,7 @@ namespace AnimalShelter.Controllers
             }
             return View();
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult Edit(int? id)
         {
             if (id is null)
@@ -98,6 +102,7 @@ namespace AnimalShelter.Controllers
             }
             return View(a);
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int? id)
         {
             if (id is null)
@@ -115,12 +120,11 @@ namespace AnimalShelter.Controllers
 
             k.Pets.Remove(y);
             k.SaveChanges();
-            //TempData["msj"] = y.YazarAd + " adlı yazar silindi";
             return RedirectToAction("Index");
 
 
         }
-        //[Authorize]
+      
         [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
@@ -144,6 +148,8 @@ namespace AnimalShelter.Controllers
             }
 
         }
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Families()
         {
             var families = k.Families;
@@ -154,6 +160,7 @@ namespace AnimalShelter.Controllers
             return View();
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult CreateFamilya(Familya a)
         {
             if (ModelState.IsValid)
@@ -170,6 +177,8 @@ namespace AnimalShelter.Controllers
             }
 
         }
+
+        [Authorize(Roles = "Admin")]
         public IActionResult FamilyaDelete(int? id)
         {
             if (id is null)

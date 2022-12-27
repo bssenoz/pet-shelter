@@ -14,10 +14,10 @@
         </div>
         <div class="col">
             <div class="link">
-                <a asp-action="Index">All</a> |
-                <a asp-action="Dog">Dog</a> |
-                <a asp-action="Cat">Cat</a> |
-                <a asp-action="Bird">Bird</a>
+                <a asp-action="Index">@language.GetKey("all")</a> |
+                <a asp-action="Dog">@language.GetKey("dog")</a> |
+                <a asp-action="Cat">@language.GetKey("cat")</a> |
+                <a asp-action="Bird">@language.GetKey("bird")</a>
             </div>
         </div>
     </div>

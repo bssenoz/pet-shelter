@@ -4,26 +4,43 @@
     }
 @inject LanguageService language
 <div class="container">
-    <h1>New Animal</h1>
-    <form asp-action="Edit">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input type="hidden" asp-for="PetId" />
-        <label>@language.GetKey("familya")</label>
-        <input asp-for="FamilyaId" class="form-control">
-        <span asp-validation-for="FamilyaId" class="text-danger"></span>
-        <label>@language.GetKey("species")</label>
-        <input asp-for="Species" class="form-control">
-        <span asp-validation-for="Species" class="text-danger"></span>
-        <label>@language.GetKey("age")</label>
-        <input asp-for="Age" class="form-control">
-        <span asp-validation-for="Age" class="text-danger"></span>
-        <label>@language.GetKey("image") Link</label>
-        <input asp-for="Image" class="form-control">
-        <span asp-validation-for="Image" class="text-danger"></span>
-        <input type="submit" value="@language.GetKey("save")" class="btn btn-primary" style="margin-top:1rem" />
-    </form>
+    <div class="row">
+        <div class="col">
+            <h2>@language.GetKey("edit")</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="PetId" />
+                <label>@language.GetKey("familya")</label>
+                <input asp-for="FamilyaId" class="form-control">
+                <span asp-validation-for="FamilyaId" class="text-danger"></span>
+                <label>@language.GetKey("species")</label>
+                <input asp-for="Species" class="form-control">
+                <span asp-validation-for="Species" class="text-danger"></span>
+                <label>@language.GetKey("age")</label>
+                <input asp-for="Age" class="form-control">
+                <span asp-validation-for="Age" class="text-danger"></span>
+                <label>@language.GetKey("image") Link</label>
+                <input asp-for="Image" class="form-control">
+                <span asp-validation-for="Image" class="text-danger"></span>
+                <input type="submit" value="@language.GetKey("save")" class="btn btn-primary" style="margin-top:1rem" />
+            </form>
+        </div>
+    </div>
+   
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+<style>
+    h2 {
+        float:left;
+    }
+    form {
+        margin-top:1rem;
+    }
+</style>

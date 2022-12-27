@@ -7,7 +7,7 @@
     Layout = "/Views/Shared/_AdminLayout.cshtml";
 }
 <div class="container">
-    <h1>New Animal</h1>
+    <h1>@language.GetKey("newPet")</h1>
     <form asp-action="Create">
         <label>@language.GetKey("familya")</label>
         <input asp-for="FamilyaId" class="form-control" type="text" placeholder="" aria-label="">

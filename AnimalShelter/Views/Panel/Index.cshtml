@@ -18,21 +18,26 @@
 
 
 <div class="container" style="text-align:center">
-    <h1>ANIMALS</h1>
-    <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Create"> @language.GetKey("newAnimal")</a>
-    </button>
-    <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Adoption"> @language.GetKey("adoptionRequests")</a>
-    </button>
-    <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="CreateFamilya"> @language.GetKey("familya") new</a>
-    </button>
+    <h1>@language.GetKey("pets")</h1>
+    <div class="row">
+        <div class="col">
+            <div class="link">
+                <a asp-controller="Panel" asp-action="Families">@language.GetKey("families")</a> |
+                <a asp-controller="Panel" asp-action="Adoption">@language.GetKey("adoptionRequests")</a>
+            </div>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Create"> @language.GetKey("newAnimal")</a>
+            </button>
+        </div>
+    </div>
+
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    @language.GetKey("PetId")
+                    Id
                 </th>
                 <th>
                     @language.GetKey("image")
@@ -77,3 +82,16 @@
         </tbody>
     </table>
 </div>
+
+<style>
+.link {
+    float:left;
+}
+    .btn-outline-success {
+        float:right;
+    }
+    h1 {
+        text-transform: uppercase;
+    }
+  
+</style>

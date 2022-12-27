@@ -189,4 +189,28 @@
   <data name="name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="all" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="bird" xml:space="preserve">
+    <value>Bird</value>
+  </data>
+  <data name="cat" xml:space="preserve">
+    <value>Cat</value>
+  </data>
+  <data name="dog" xml:space="preserve">
+    <value>Dog</value>
+  </data>
+  <data name="families" xml:space="preserve">
+    <value>Families</value>
+  </data>
+  <data name="newFamilya" xml:space="preserve">
+    <value>New Familya</value>
+  </data>
+  <data name="newPet" xml:space="preserve">
+    <value>newPet</value>
+  </data>
+  <data name="pets" xml:space="preserve">
+    <value>Pets</value>
+  </data>
 </root>
