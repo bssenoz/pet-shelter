@@ -7,7 +7,7 @@
 @inject IViewLocalizer Localizer
 @inject IOptions<RequestLocalizationOptions> LocOptions
 @{
-    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
 
 @{
@@ -42,6 +42,9 @@
                 <th>
                     @language.GetKey("name")
                 </th>
+                <th>
+                    @language.GetKey("count")
+                </th>
                 <th></th>
             </tr>
         </thead>
@@ -54,6 +57,9 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Count)
                     </td>
                     <td>
                         <a asp-action="FamilyaDelete" asp-route-id="@item.Id">@language.GetKey("delete")</a>

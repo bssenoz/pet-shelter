@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using AnimalShelter.Migrations.Shelter;
 
 namespace AnimalShelter.Controllers
 {
@@ -25,27 +26,46 @@ namespace AnimalShelter.Controllers
             var petList = pets.ToList().OrderByDescending(r => r.PetId);
             return View(petList);
         }
- 
-        public IActionResult Dog()
+
+        public async Task<IActionResult> Dog(string SearchString)
         {
-            var pet=(from a in k.Pets
-                      where a.FamilyaId == 1
-             select a).ToList().OrderByDescending(r => r.PetId);
-            return View(pet);
+            ViewData["CurrentFilter"] = SearchString;
+            var pet = (from a in k.Pets
+                       where a.FamilyaId == 1
+                       select a);
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                pet = pet.Where(p => p.Species.Contains(SearchString));
+            }
+            var petList = pet.ToList().OrderByDescending(r => r.PetId);
+
+            return View(petList);
         }
-        public IActionResult Cat()
+        public async Task<IActionResult> Cat(string SearchString)
         {
+            ViewData["CurrentFilter"] = SearchString;
             var pet = (from a in k.Pets
                         where a.FamilyaId == 3
-                        select a).ToList().OrderByDescending(r => r.PetId);
-            return View(pet);
+                        select a);
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                pet = pet.Where(p => p.Species.Contains(SearchString));
+            }
+            var petList = pet.ToList().OrderByDescending(r => r.PetId);
+            return View(petList);
         }
-        public IActionResult Bird()
+        public async Task<IActionResult> Bird(string SearchString)
         {
+            ViewData["CurrentFilter"] = SearchString;
             var pet = (from a in k.Pets
                         where a.FamilyaId == 4
-                        select a).ToList().OrderByDescending(r => r.PetId);
-            return View(pet);
+                        select a);
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                pet = pet.Where(p => p.Species.Contains(SearchString));
+            }
+            var petList = pet.ToList().OrderByDescending(r => r.PetId);
+            return View(petList);
         }
         [Authorize]
         public IActionResult Adoption(int? id)
@@ -56,6 +76,7 @@ namespace AnimalShelter.Controllers
                 return View("Hata");
             }
             var a = k.Pets.FirstOrDefault(x => x.PetId == id);
+
             if (a is null)
             {
                 TempData["hata"] = "Düzenlenece herhangi bir yazar yok";

@@ -4,6 +4,7 @@
 @using Microsoft.Extensions.Options
 @using Microsoft.AspNetCore.Mvc.Localization
 
+
 @inject IViewLocalizer Localizer
 @inject IOptions<RequestLocalizationOptions> LocOptions
 @inject LanguageService language
@@ -49,10 +50,15 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-
-                        <li class="nav-item">
+                        @{
+                            if (User.IsInRole("Admin"))
+                {
+                      <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Index">Panel</a>
-                        </li>
+                      </li>
+                }
+                }
+
                     </ul>
                 <ul class="language">
 

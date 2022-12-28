@@ -7,11 +7,11 @@
 @inject IViewLocalizer Localizer
 @inject IOptions<RequestLocalizationOptions> LocOptions
 @{
-    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
 
 @{
-    ViewData["Title"] = "Animal";
+    ViewData["Title"] = "Panel";
 }
 @model IEnumerable<AnimalShelter.Models.Pet>
 @inject LanguageService language

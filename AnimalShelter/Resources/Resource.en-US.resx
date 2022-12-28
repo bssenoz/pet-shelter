@@ -124,7 +124,7 @@
     <value>Age</value>
   </data>
   <data name="PetId" xml:space="preserve">
-    <value>Animal Id</value>
+    <value>Pet Id</value>
   </data>
   <data name="approve" xml:space="preserve">
     <value>Approve</value>
@@ -157,7 +157,7 @@
     <value>New Adoption</value>
   </data>
   <data name="newAnimal" xml:space="preserve">
-    <value>New Animal</value>
+    <value>New Pet</value>
   </data>
   <data name="register" xml:space="preserve">
     <value>Register</value>
@@ -208,9 +208,15 @@
     <value>New Familya</value>
   </data>
   <data name="newPet" xml:space="preserve">
-    <value>newPet</value>
+    <value>New Pet</value>
   </data>
   <data name="pets" xml:space="preserve">
     <value>Pets</value>
+  </data>
+  <data name="count" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
   </data>
 </root>

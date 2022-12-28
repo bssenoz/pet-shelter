@@ -120,8 +120,11 @@ namespace AnimalShelter.Controllers
 
             k.Pets.Remove(y);
             k.SaveChanges();
+            var familya = k.Families.FirstOrDefault(x => x.Id == y.FamilyaId);
+            familya.Count--;
+            k.Families.Update(familya);
+            k.SaveChanges();
             return RedirectToAction("Index");
-
 
         }
       
@@ -137,7 +140,12 @@ namespace AnimalShelter.Controllers
             if (ModelState.IsValid)
             {
                 k.Add(a);
+                k.SaveChanges(); 
+                var familya = k.Families.FirstOrDefault(x => x.Id == a.FamilyaId);
+                familya.Count++;
+                k.Families.Update(familya);
                 k.SaveChanges();
+
                 return RedirectToAction("Index");
 
             }
@@ -165,6 +173,7 @@ namespace AnimalShelter.Controllers
         {
             if (ModelState.IsValid)
             {
+                a.Count=0;
                 k.Add(a);
                 k.SaveChanges();
                 return RedirectToAction("Families");
@@ -187,18 +196,23 @@ namespace AnimalShelter.Controllers
                 return View("Hata");
             }
             var y = k.Families.FirstOrDefault(x => x.Id == id);
+            var pets = (from a in k.Pets
+                       where a.FamilyaId == id
+                       select a);
             if (y is null)
             {
                 TempData["hata"] = "Silinecek herhangi bir yazar yok";
                 return View("Hata");
 
             }
-
             k.Families.Remove(y);
+           
+            foreach (var pet in pets)
+            {
+                k.Pets.Remove(pet);
+            }
             k.SaveChanges();
             return RedirectToAction("Index");
-
-
         }
 
 

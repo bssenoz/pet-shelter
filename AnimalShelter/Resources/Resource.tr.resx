@@ -157,7 +157,7 @@
     <value>Yeni Sahiplenme</value>
   </data>
   <data name="newAnimal" xml:space="preserve">
-    <value>Yeni Hayvan</value>
+    <value>Yeni Evcil Hayvan</value>
   </data>
   <data name="register" xml:space="preserve">
     <value>Kayıt Ol</value>
@@ -189,16 +189,16 @@
   <data name="name" xml:space="preserve">
     <value>Ad</value>
   </data>
-  <data name="All" xml:space="preserve">
+  <data name="all" xml:space="preserve">
     <value>Hepsi</value>
   </data>
-  <data name="Bird" xml:space="preserve">
+  <data name="bird" xml:space="preserve">
     <value>Kuş</value>
   </data>
-  <data name="Cat" xml:space="preserve">
+  <data name="cat" xml:space="preserve">
     <value>Kedi</value>
   </data>
-  <data name="Dog" xml:space="preserve">
+  <data name="dog" xml:space="preserve">
     <value>Köpek</value>
   </data>
   <data name="families" xml:space="preserve">
@@ -212,5 +212,11 @@
   </data>
   <data name="pets" xml:space="preserve">
     <value>Evcil Hayvanlar</value>
+  </data>
+  <data name="count" xml:space="preserve">
+    <value>Sayı</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Ara</value>
   </data>
 </root>

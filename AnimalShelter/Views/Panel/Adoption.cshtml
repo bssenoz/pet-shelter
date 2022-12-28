@@ -1,10 +1,10 @@
 ﻿
 @{
-    ViewData["Title"] = "Animal";
+    ViewData["Title"] = "Adoption";
 }
 @model IEnumerable<AnimalShelter.Models.Adoption>
 @{
-    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
 
 @inject LanguageService language
@@ -58,7 +58,7 @@
                         <a asp-controller="Panel" asp-action="Approve" asp-route-id="@item.Id">@language.GetKey("approve")</a>
                     </td>
                     <td>
-                        <a asp-controller="Panel" asp-action="Reject" asp-route-id="@item.Id" onclick="reject()">@language.GetKey("reject")</a>
+                        <a asp-controller="Panel" asp-action="Reject" asp-route-id="@item.Id" onclick="reject()">@language.GetKey("delete")</a>
                     </td>
                 </tr>
             }

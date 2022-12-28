@@ -170,7 +170,6 @@ C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\bin\Debug\net5.0\AnimalSh
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\bin\Debug\net5.0\AnimalShelter.runtimeconfig.json
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\bin\Debug\net5.0\AnimalShelter.runtimeconfig.dev.json
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\bin\Debug\net5.0\AnimalShelter.dll
-C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\bin\Debug\net5.0\ref\AnimalShelter.dll
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\bin\Debug\net5.0\AnimalShelter.pdb
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\bin\Debug\net5.0\AnimalShelter.Views.dll
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\bin\Debug\net5.0\AnimalShelter.Views.pdb
@@ -330,7 +329,6 @@ C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Vi
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\Create.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\Edit.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Admin\Create.cshtml.g.cs
-C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\Adoption.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\Approve.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Panel\Reject.cshtml.g.cs
@@ -348,3 +346,4 @@ C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Vi
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Pet\Cat.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Pet\Dog.cshtml.g.cs
 C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\obj\Debug\net5.0\Razor\Views\Pet\Bird.cshtml.g.cs
+C:\Users\bseno\OneDrive\Masaüstü\yeni2\AnimalShelter\bin\Debug\net5.0\ref\AnimalShelter.dll
