@@ -1,0 +1,12 @@
+﻿@model PetShelter.Models.ProjectRole
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="RoleName"></label>
+        <input asp-for="RoleName" />
+        <span asp-validation-for="RoleName"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="create" />
+    </div>
+</form>

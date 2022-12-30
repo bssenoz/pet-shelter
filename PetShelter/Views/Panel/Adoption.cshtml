@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Adoption";
+}
+@model IEnumerable<PetShelter.Models.Adoption>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@inject LanguageService language
+
+<div class="container" style="text-align:center">
+    <h2>@language.GetKey("adoptionRequests")</h2>
+    <div class="row">
+        <div class="col">
+            <div class="link">
+                <a asp-controller="Panel" asp-action="Index">@language.GetKey("pets")</a> |
+                <a asp-controller="Panel" asp-action="Families">@language.GetKey("families")</a>
+            </div>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-outline-success">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="New">@language.GetKey("newAdoption")</a>
+            </button>
+        </div>
+    </div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @language.GetKey("PetId")
+                </th>
+                <th>
+                    @language.GetKey("user")
+                </th>
+                <th>
+                    @language.GetKey("situation")
+                </th>
+                 <th>
+                    beforepet
+                </th>
+                          <th>
+                    homepet
+                </th>
+                <th>
+                    adres
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PetId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Situation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BeforePet)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HomePet)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adress)
+                    </td>
+                    <td>
+                        <a asp-controller="Panel" asp-action="Approve" asp-route-id="@item.Id">@language.GetKey("approve")</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Panel" asp-action="Reject" asp-route-id="@item.Id" onclick="reject()">@language.GetKey("delete")</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .table {
+        margin-top: 1rem;
+    }
+
+    .link {
+        float: left;
+    }
+
+    .btn-outline-success {
+        float: right;
+    }
+</style>
+<script>
+    function reject() {
+        alert("reddedildi");
+    }
+</script>
+

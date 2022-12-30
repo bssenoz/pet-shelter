@@ -1,0 +1,79 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Animal";
+}
+@model IEnumerable<PetShelter.Models.Familya>
+@inject LanguageService language
+
+
+<div class="container" style="text-align:center">
+    <h1> @language.GetKey("families")</h1>
+    <div class="row">
+        <div class="col">
+            <div class="link">
+                <a asp-controller="Panel" asp-action="Index">@language.GetKey("pets")</a> |
+                <a asp-controller="Panel" asp-action="Adoption">@language.GetKey("adoptionRequests")</a>
+            </div>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-outline-success" style="float:right;margin-bottom:1rem">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="CreateFamilya"> @language.GetKey("newFamilya")</a>
+            </button>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    @language.GetKey("name")
+                </th>
+                <th>
+                    @language.GetKey("count")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Count)
+                    </td>
+                    <td>
+                        <a asp-action="FamilyaDelete" asp-route-id="@item.Id">@language.GetKey("delete")</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<style>
+    .link {
+        float: left;
+    }
+
+    .btn-outline-success {
+        float: right;
+    }
+</style>

@@ -1,0 +1,21 @@
+﻿@model  PetShelter.Models.Adoption
+@inject LanguageService language
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>New Adoption</h1>
+    <form asp-action="New">
+        <label> @language.GetKey("PetId")</label>
+        <input asp-for="PetId" class="form-control">
+        <span asp-validation-for="PetId" class="text-danger"></span>
+        <label> @language.GetKey("user")</label>
+        <input asp-for="Username" class="form-control">
+        <span asp-validation-for="Username" class="text-danger"></span>
+        <input type="submit" value="@language.GetKey("approve")" class="btn btn-primary" style="margin-top:1rem" />
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

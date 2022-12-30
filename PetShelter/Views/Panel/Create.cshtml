@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "New Pet";
+}
+@model PetShelter.Models.Pet
+@inject LanguageService language
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>@language.GetKey("newPet")</h1>
+    <form asp-action="Create">
+        <label>@language.GetKey("familya")</label>
+        <input asp-for="FamilyaId" class="form-control" type="text" placeholder="" aria-label="">
+        <span asp-validation-for="FamilyaId" class="text-danger"></span>
+        <label>@language.GetKey("species")</label>
+        <input asp-for="Species" class="form-control" type="text" placeholder="" aria-label="">
+        <span asp-validation-for="Species" class="text-danger"></span>
+        <label>@language.GetKey("age")</label>
+        <input asp-for="Age" class="form-control" type="number" placeholder="" aria-label="">
+        <span asp-validation-for="Age" class="text-danger"></span>
+        <label>@language.GetKey("image") Link</label>
+        <input asp-for="Image" class="form-control" type="text" placeholder="" aria-label="">
+        <span asp-validation-for="Image" class="text-danger"></span>
+        <input type="submit" value="@language.GetKey("create")" class="btn btn-primary" style="margin-top:1rem" />
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
