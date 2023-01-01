@@ -234,4 +234,19 @@
   <data name="password" xml:space="preserve">
     <value>Şifre</value>
   </data>
+  <data name="adress" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="beforepet" xml:space="preserve">
+    <value>Daha önce hiç hayvan sahiplendiniz mi</value>
+  </data>
+  <data name="homepet" xml:space="preserve">
+    <value>Sahiplendiğiniz hayvana nerede bakacaksınız</value>
+  </data>
+  <data name="adoptionDelete" xml:space="preserve">
+    <value>Sahiplenme İsteği Silindi</value>
+  </data>
+  <data name="backtohome" xml:space="preserve">
+    <value>AnaSayfaya Geri Dön</value>
+  </data>
 </root>

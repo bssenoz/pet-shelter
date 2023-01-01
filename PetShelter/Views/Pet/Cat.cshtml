@@ -4,17 +4,16 @@
 @model IEnumerable<PetShelter.Models.Pet>
 @inject LanguageService language
 
-
 <div class="container" style="text-align:center">
-        <div class="row">
+    <div class="row">
         <div class="col">
-            <img src="https://www.aphis.usda.gov/wcm/connect/c435b26e-3822-4276-9875-67eafa8111d3/1/not-all-birds-animals-qualify-as-pets-med.png?MOD=AJPERES&CVID=" />
+            <img class="pet-top" src="https://www.aphis.usda.gov/wcm/connect/c435b26e-3822-4276-9875-67eafa8111d3/1/not-all-birds-animals-qualify-as-pets-med.png?MOD=AJPERES&CVID=" />
         </div>
     </div>
     <div class="row">
         <div class="col">
             <form asp-action="Index" method="get">
-                <input type="text" class="form-control" name="SearchString" placeholder="Search">
+                <input type="text" class="form-control" name="SearchString" placeholder="@language.GetKey("search")">
             </form>
         </div>
         <div class="col">
@@ -27,20 +26,28 @@
         </div>
     </div>
 
-    <br />
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+    <div class="row">
+        <div class="col">
+            <div class="wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xxl-4 mx-auto">
 
         @foreach (var item in Model)
         {
             <form asp-action="Adoption">
                 <div class="col" style="margin-top:1rem">
-                    <div class="card" style="width: 18rem;height: 27rem;">
+                    <div class="card" style="width: 18rem;height: auto;">
                         <img src="@Html.DisplayFor(modelItem => item.Image)" />
                         <div class="card-body">
                             <h5 class="card-title">@Html.DisplayFor(modelItem => item.Species)</h5>
                             <h6>@language.GetKey("age"): @Html.DisplayFor(modelItem => item.Age)</h6>
-                            @*<button type="button" class="btn btn-secondary" disabled>@Html.DisplayFor(modelItem => item.FamilyaId)</button>*@
-                            <a asp-action="Adoption" asp-route-id="@item.PetId">@language.GetKey("want")</a>
+                            <button type="button" class="btn btn-outline-warning"> <a asp-action="Form" asp-route-id="@item.PetId">@language.GetKey("want")</a></button>
                         </div>
                     </div>
                 </div>
@@ -59,8 +66,33 @@
         float: right;
     }
 
-    img {
+    .pet-top {
         margin-bottom: 1rem;
+        width: 50%;
+    }
+
+    .wave {
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        background-color: #B0E0E6;
+    }
+
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(151% + 1.3px);
+            height: 96px;
+        }
+
+        .wave .shape-fill {
+            fill: #FFFFFF;
+        }
+
+    a {
+        text-decoration: none;
+        color: #000;
     }
 
 </style>

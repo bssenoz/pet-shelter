@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using PetShelter.Models;
 using System.Data;
 
@@ -19,6 +20,12 @@ namespace PetShelter.Controllers
         public IActionResult Approve(int? id)
         {
             var a = k.Adoption.FirstOrDefault(x => x.Id == id);
+            var b = k.Pets.FirstOrDefault(x => x.PetId == a.PetId); 
+            if(b == null)
+            {
+                TempData["hata"] = "The pet has already been adopted.";
+                return View("Hata");
+            }
             a.Situation = true;
             k.Adoption.Update(a);
             k.SaveChanges();
@@ -42,21 +49,11 @@ namespace PetShelter.Controllers
         [HttpPost]
         public IActionResult New(Adoption a)
         {
-            if (ModelState.IsValid)
-            {
-                a.Situation = true;
-                k.Add(a);
-                k.SaveChanges();
-                Delete(a.PetId);
-                return RedirectToAction("Index");
-
-            }
-            else
-            {
-                TempData["hata"] = "Lütfen Gerekli alanları doldurunuz";
-                return RedirectToAction("Create");
-            }
-
+             a.Situation = true;
+             k.Add(a);
+             k.SaveChanges();
+             Delete(a.PetId);
+             return RedirectToAction("Index");
         }
 
         [Authorize(Roles = "Admin")]
@@ -72,7 +69,7 @@ namespace PetShelter.Controllers
         {
             if (id != a.PetId)
             {
-                TempData["hata"] = "Güncelleme Yapılmaz";
+                TempData["hata"] = "No Updates";
                 return View("Hata");
             }
             if (ModelState.IsValid)
@@ -88,13 +85,13 @@ namespace PetShelter.Controllers
         {
             if (id is null)
             {
-                TempData["hata"] = "Düzenleme kısmı çalışamaz";
+                TempData["hata"] = "edit part can't work";
                 return View("Hata");
             }
             var a = k.Pets.FirstOrDefault(x => x.PetId == id);
             if (a is null)
             {
-                TempData["hata"] = "Düzenlenece herhangi bir yazar yok";
+                TempData["hata"] = "No pets found to edit";
                 return View("Hata");
 
             }
@@ -105,13 +102,13 @@ namespace PetShelter.Controllers
         {
             if (id is null)
             {
-                TempData["hata"] = "Silme kısmı çalışamaz";
+                TempData["hata"] = "delete part can't work";
                 return View("Hata");
             }
             var y = k.Pets.FirstOrDefault(x => x.PetId == id);
             if (y is null)
             {
-                TempData["hata"] = "Silinecek herhangi bir yazar yok";
+                TempData["hata"] = "No pets to delete";
                 return View("Hata");
 
             }
@@ -149,7 +146,7 @@ namespace PetShelter.Controllers
             }
             else
             {
-                TempData["hata"] = "Lütfen Gerekli alanları doldurunuz";
+                TempData["hata"] = "Please fill in the required fields";
                 return RedirectToAction("Create");
             }
 
@@ -179,7 +176,7 @@ namespace PetShelter.Controllers
             }
             else
             {
-                TempData["hata"] = "Lütfen Gerekli alanları doldurunuz";
+                TempData["hata"] = "Please fill in the required fields";
                 return RedirectToAction("Create");
             }
 

@@ -64,14 +64,14 @@ namespace PetShelter.Controllers
         {
             if (id is null)
             {
-                TempData["hata"] = "Düzenleme kısmı çalışamaz";
+                TempData["hata"] = "pet not found";
                 return View("Hata");
             }
             var a = k.Pets.FirstOrDefault(x => x.PetId == id);
 
             if (a is null)
             {
-                TempData["hata"] = "Düzenlenece herhangi bir yazar yok";
+                TempData["hata"] = "pet not found";
                 return View("Hata");
 
             }
@@ -100,7 +100,7 @@ namespace PetShelter.Controllers
             }
             else
             {
-                TempData["hata"] = "Lütfen Gerekli alanları doldurunuz";
+                TempData["hata"] = "Please fill in the required fields";
                 return RedirectToAction("Create");
             }
 
@@ -111,7 +111,7 @@ namespace PetShelter.Controllers
         {
             if (id != a.PetId)
             {
-                TempData["hata"] = "Güncelleme Yapılmaz";
+                TempData["hata"] = "No Updates";
                 return View("Hata");
             }
              a.Username = User.Identity.Name;
@@ -122,24 +122,17 @@ namespace PetShelter.Controllers
             k.SaveChanges();
             return RedirectToAction("Index");
         }
-        //[Authorize(Roles = "Admin")]
+        [Authorize]
         public IActionResult Form(int? id)
         {
             if (id is null)
             {
-                TempData["hata"] = "Düzenleme kısmı çalışamaz";
+                TempData["hata"] = "Edit part can't work";
                 return View("Hata");
             }
-           // Adoption(id);
             Adoption(id);
             var a = k.Adoption.Max(q => q.Id);
             var b = k.Adoption.FirstOrDefault(x => x.Id == a);
-            //if (a is null)
-            //{
-            //    TempData["hata"] = "";
-            //    return View("Hata");
-
-            //}
             return View(b);
         }
     }

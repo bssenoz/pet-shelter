@@ -1,4 +1,15 @@
 ﻿@{
     Layout = "/Views/Shared/_Layout.cshtml";
 }
-<h1>reddedildi</h1>
+@inject LanguageService language
+<div class="container">
+    <h1>@language.GetKey("adoptionDelete")</h1>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="Adoption"> @language.GetKey("backtohome")</a>
+</div>
+
+<style>
+    .container {
+        text-align:center;
+    }
+
+</style>

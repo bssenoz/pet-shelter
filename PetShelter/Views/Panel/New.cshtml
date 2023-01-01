@@ -4,7 +4,7 @@
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 <div class="container">
-    <h1>New Adoption</h1>
+    <h1> @language.GetKey("newAdoption")</h1>
     <form asp-action="New">
         <label> @language.GetKey("PetId")</label>
         <input asp-for="PetId" class="form-control">
@@ -12,6 +12,17 @@
         <label> @language.GetKey("user")</label>
         <input asp-for="Username" class="form-control">
         <span asp-validation-for="Username" class="text-danger"></span>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="PetId" />
+        <label> @language.GetKey("beforepet")?</label>
+        <input asp-for="BeforePet" class="form-control">
+        <span asp-validation-for="BeforePet" class="text-danger"></span>
+        <label> @language.GetKey("homepet")?</label>
+        <input asp-for="HomePet" class="form-control">
+        <span asp-validation-for="HomePet" class="text-danger"></span>
+        <label> @language.GetKey("adress")</label>
+        <input asp-for="Adress" class="form-control">
+        <span asp-validation-for="Adress" class="text-danger"></span>
         <input type="submit" value="@language.GetKey("approve")" class="btn btn-primary" style="margin-top:1rem" />
     </form>
 </div>

@@ -13,12 +13,12 @@
     <div class="row">
         <div class="col">
             <div class="link">
-                <a asp-controller="Panel" asp-action="Index">@language.GetKey("pets")</a> |
-                <a asp-controller="Panel" asp-action="Families">@language.GetKey("families")</a>
+                <a asp-controller="Panel" asp-action="Index" class="a-top">@language.GetKey("pets")</a> |
+                <a asp-controller="Panel" asp-action="Families" class="a-top">@language.GetKey("families")</a>
             </div>
         </div>
         <div class="col">
-            <button type="button" class="btn btn-outline-success">
+            <button type="button" class="btn btn-outline-info">
                 <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="New">@language.GetKey("newAdoption")</a>
             </button>
         </div>
@@ -38,13 +38,13 @@
                     @language.GetKey("situation")
                 </th>
                  <th>
-                    beforepet
+                    @language.GetKey("beforepet")?
                 </th>
-                          <th>
-                    homepet
+                 <th>
+                    @language.GetKey("homepet")?
                 </th>
                 <th>
-                    adres
+                    @language.GetKey("adress")
                 </th>
                 <th></th>
             </tr>
@@ -72,10 +72,10 @@
                         @Html.DisplayFor(modelItem => item.Adress)
                     </td>
                     <td>
-                        <a asp-controller="Panel" asp-action="Approve" asp-route-id="@item.Id">@language.GetKey("approve")</a>
+                        <a asp-controller="Panel" asp-action="Approve" asp-route-id="@item.Id" class="approve">@language.GetKey("approve")</a>
                     </td>
                     <td>
-                        <a asp-controller="Panel" asp-action="Reject" asp-route-id="@item.Id" onclick="reject()">@language.GetKey("delete")</a>
+                        <a asp-controller="Panel" asp-action="Reject" asp-route-id="@item.Id" class="delete" onclick="reject()">@language.GetKey("delete")</a>
                     </td>
                 </tr>
             }
@@ -92,13 +92,26 @@
         float: left;
     }
 
-    .btn-outline-success {
+    .btn-outline-info {
         float: right;
+    }
+
+    a {
+        text-decoration:none;
+    }
+    .approve {
+        color: green;
+    }
+    .delete {
+        color: red;
+    }
+    .a-top {
+        color:black;
     }
 </style>
 <script>
     function reject() {
-        alert("reddedildi");
+        alert("adoption request deleted");
     }
 </script>
 

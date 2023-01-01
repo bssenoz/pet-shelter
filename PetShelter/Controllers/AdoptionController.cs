@@ -13,50 +13,6 @@ namespace PetShelter.Controllers
             var adoption = k.Adoption;
             return View(adoption);
         }
-        [HttpPost]
-        public IActionResult Formaa(int? id, Adoption a)
-        {
-           // var a = k.Pets.FirstOrDefault(x => x.PetId == id);
-            //if (id != a.Id)
-            //{
-            //    TempData["hata"] = "Güncelleme Yapılmaz";
-            //    return View("Hata");
-            //}
-            if (ModelState.IsValid)
-            {
-                Adoption b = new Adoption();
-                b.Username = User.Identity.Name;
-                b.PetId = a.PetId;
-                b.Situation = false;
-                k.Add(b);
-                k.SaveChanges();
-            }
-            return View();
-        }
-       // [Authorize(Roles = "Admin")]
-        public IActionResult Formaa(int? id)
-        {
-            if (id is null)
-            {
-                TempData["hata"] = "Düzenleme kısmı çalışamaz";
-                return View("Hata");
-            }
-            var a = k.Pets.FirstOrDefault(x => x.PetId == id);
-            Adoption b = new Adoption();
-            b.Username = User.Identity.Name;
-            b.PetId = a.PetId;
-            b.Situation = false;
-            //k.Add(b);
-            //k.SaveChanges();
-            if (a is null)
-            {
-                TempData["hata"] = "Düzenlenece herhangi bir yazar yok";
-                return View("Hata");
-
-            }
-            return View(b);
-        }
-
         public IActionResult Create()
         {
             ViewData["role"] = "Admin";
@@ -105,7 +61,7 @@ namespace PetShelter.Controllers
             }
             else
             {
-                TempData["hata"] = "Lütfen Gerekli alanları doldurunuz";
+                TempData["hata"] = "Please fill in the required fields";
                 return RedirectToAction("Create");
             }
 

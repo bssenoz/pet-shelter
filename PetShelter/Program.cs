@@ -25,10 +25,10 @@ builder.Services.AddLocalization(options =>
 
 builder.Services.AddSingleton<LanguageService>();
 
+    //options.DefaultRequestCulture = new("tr-TR");
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
-    //options.DefaultRequestCulture = new("tr-TR");
 
     CultureInfo[] cultures = new CultureInfo[]
     {

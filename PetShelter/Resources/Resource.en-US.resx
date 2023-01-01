@@ -234,4 +234,19 @@
   <data name="password" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="adress" xml:space="preserve">
+    <value>Adress</value>
+  </data>
+  <data name="beforepet" xml:space="preserve">
+    <value>Have you ever owned a pet before</value>
+  </data>
+  <data name="homepet" xml:space="preserve">
+    <value>Where will you look after your pet</value>
+  </data>
+  <data name="adoptionDelete" xml:space="preserve">
+    <value>Adoption request deleted</value>
+  </data>
+  <data name="backtohome" xml:space="preserve">
+    <value>Back to home</value>
+  </data>
 </root>
