@@ -107,7 +107,13 @@ namespace PetShelter.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-                    _userManager.AddToRoleAsync(user, "User").Wait();
+                    if(user.UserName == "b201210025@sakarya.edu.tr")
+                    {
+                        _userManager.AddToRoleAsync(user, "Admin").Wait();
+                    } else
+                    {
+                        _userManager.AddToRoleAsync(user, "User").Wait();
+                    }
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
